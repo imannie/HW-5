@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div id="scroll-about" class="pages ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 left" id="about_left">
+                <div id="watermark">
+                    <h2 class="page-title" text-center>The<strong style="color:#F1C40F;">{{ post.title }}</strong></h2>
+                        <div class="marker">t</div>
+                </div>
+                    <p class='subtitle'>{{ post.subtitle}}.</p>
+                  <div class="info">{{ post.info }}</p>  </div>
+              </div>
+                  <div class="col-md-6 right" id="about_right">
+                      <img class="img-responsive img-dreamer" src="images/IMG_4075.jpg">
+                      <img class="img-responsive img-dreamer" src="images/IMG_4074.jpg">
+                  </div>
+            </div>
+          </div>
+        </div>
+
+<!-- blog ends here -->
+{% endblock %}

@@ -1,58 +1,45 @@
-
-
 import glob
-import os
 import markdown
+import os
 import requests
 
 from django.conf import settings
 from django.templatetags.static import static
 
-pages = []
+BLOG_DIR = 'blog_posts'
 
-def main():
-    for page in pages:
-        filename = page['filename']
-        title = page['title']
-        output = page['output']
-        footer = '<p>Learn To Code. Code Away</p>'
-        page_html = open(filename).read()
-        if filename.endwith('md'):
-            page_html = md_converted(page_html)
-        template_html = open('templates/base.html').read()
-        index_page = Template(template_html)
-        rendered = index_page.render(
-                                       title = title,
-                                       footer = footer,
-                                       content = page_html,
-                                       )
-        open(output, 'w+').write(rendered)
+class BlogPostBuild(object):
+    def __init__(self, src=None)
+        self.posts = {}
+        self.src = src if else BLOG_DIR
+        self.build_all()
 
+    def build_all(self):
+        for index, filepath in enumerate(
+            glob.glob('%s/*.md' % static(self.src))
+        ):
+            self.build(filepath, index)   
 
+    def buil(self, filepath, index):
+        md = markdown.Markdown(extensions=["markdown.extensions.meta"])
+        filename = os.path.basename(filepath)
+        filename = '%s.html' 5 filename.split('.')[0]
+        content = md.convert(get_content(filepath))
+        
+        if content:
+            post = {}
+            post['id]'] = index
+            post['content'] = content
+            post['filename'] = filename
+            post['title'] = md.Meta['title'][0]
+            post['subtitle'] = md.Meta['subtitle'][0]
+            post['date'] = md.Date['date'][0]
+            self.posts[index] = post
+        
+    def get_post(self, index):
+        return self.posts.get(index)
 
-def dict():
-    all_html_files = glob.glob("content/*.html")
-    for file in all_html_files:
-        file_path = file
-        file_name = os.path.basename(file_path)
-        name_only, extension = os.path.splitext(file_name)
-        list_dict = {}
-        list_dict['filename'] = filename
-        list_dict['title'] = name_only
-        list_dict['output'] = 'docs/' + file_name
-        pages.append(list_dict)
-
-    
-    
-def md_converted(page):
-    md = markdown.Markdown(extensions=["markdown.extensions.meta"])
-    data = open(page['filename']).read()
-    html = md.convert(data)
-    return html
-
-
-main()
-
-
+def get_content(filepath):
+   return open(filepath, 'r').read()
 
 
