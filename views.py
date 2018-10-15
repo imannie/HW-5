@@ -3,23 +3,23 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def index(request):
-    content_html = open("content/index.html").read()
+    content_html = open("templates/index.html").read()
     context = { "content": content_html}
     return render(request, "base.html", context)
 
 
 def about(request):
-    content_html = open("content/about.html").read()
+    content_html = open("templates/about.html").read()
     context = { "content": content_html}
     return render(request, 'base.html', context)
 
 def work(request):
-    content_html = open("content/work.html").read()
+    content_html = open("templates/work.html").read()
     context = { "content": content_html}
     return render(request, 'base.html', context)   
 
 def contact(request):
-    content_html = open("content/contact.html").read()
+    content_html = open("templates/contact.html").read()
     context = { "content": content_html}
     return render(request, 'base.html', context) 
 

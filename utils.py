@@ -2,8 +2,11 @@
 
 import glob
 import os
-from jinja2 import Template
 import markdown
+import requests
+
+from django.conf import settings
+from django.templatetags.static import static
 
 pages = []
 
