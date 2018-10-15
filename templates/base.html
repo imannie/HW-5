@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>{{ title}|safe }</title>
+    <head>
+      <!---Required meta tags--->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css" >
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,700i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,700,700i|Josefin+Sans:700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lekton|Open+Sans|Raleway+Dots|Reenie+Beanie|Tajawal:300" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link rel="icon" href="images/icon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    </head>
+
+  <body>
+    <div class="outer-container">
+        <header class="site-header">
+            <div class="top-header-bar">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6 flex align-items-center">
+                            <div class="header-bar-text d-none d-lg-block">
+                                <p>dreamer & thinker</p>
+                            </div><!-- .header-bar-text -->
+
+                            <div class="header-bar-email d-none d-lg-block">
+                                <a href="mailto:tranntphuong@gmail.com">hello@annielove.com</a>
+                            </div><!-- .header-bar-email -->
+                        </div><!-- .col -->
+
+                        <div class="col-12 col-lg-6 flex justify-content-between justify-content-lg-end align-items-center">
+                            <div class="header-bar-social d-none d-md-block">
+                              <nav class="site-navigation">
+
+                                  <ul class="flex-lg flex-lg-row justify-content-lg-center align-content-lg-center">
+                                      <li class="current-menu-item"><a href="index.html">Home</a></li>
+                                      <li><a href="about.html">About</a></li>
+                                      <li><a href="work.html">Work</a></li>
+                                      <li><a href="contact.html">Contact</a></li>
+                                  </ul>
+
+                                  <div class="header-bar-social d-md-none">
+                                      <ul class="flex justify-content-center align-items-center">
+                                          <li><a href="https://www.linkedin.com/in/anniept/"><i class="fa fa-linkedin"></i></a></li>
+                                          <li><a href="https://www.instagram.com/__pianne/?hl=vi"><i class="fa fa-instagram"></i></a></li>
+                                          <li><a href="https://www.facebook.com/Apinnestudio"><i class="fa fa-facebook"></i></a></li>
+                                          <li><a href="https://www.pinterest.com/Anieept/"><i class="fa fa-pinterest"></i></a></li>
+
+                                      </ul>
+                                  </div><!-- .header-bar-social -->
+                              </nav><!-- .site-navigation -->
+                            </div><!-- .header-bar-social -->
+                        </div><!-- .col -->
+                    </div><!-- .row -->
+                </div><!-- .container-fluid -->
+            </div><!-- .top-header-bar -->
+          </header>
+        </div>
+{{ content|safe }}
+            <footer class="text-center">
+                <div class="container bottom">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p>&copy;<script>document.write(new Date().getFullYear());</script>  | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://themewagon.com/">Annie</a></p>
+                            {{ footer|safe }}
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>                                                              <!-- Contact ends here -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
+        <script type='js/javascript' src='js/custom.js'></script>
+</html>
