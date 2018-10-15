@@ -14,24 +14,29 @@ blog_post_build = BlogPostBuild()
 def index(request):
     content_html = open("templates/index.html").read()
     context = { "content": content_html}
-    return render(request, "base.html", context)
+    return render(request, 'base.html', context)
 
 
 def about(request):
     content_html = open("templates/about.html").read()
     context = { "content": content_html}
-    return render(request, 'base.html', context)
+    return render(request, 'about.html', context)
 
 def work(request):
     content_html = open("templates/work.html").read()
     context = { "content": content_html}
-    return render(request, 'base.html', context)   
+    return render(request, 'work.html', context)
 
 def contact(request):
     content_html = open("templates/contact.html").read()
     context = { "content": content_html}
-    return render(request, 'base.html', context) 
+    return render(request, 'contact.html', context)
 
+
+def blog_post(request, post_id):
+    context_html = open("templates/blog_post.html").read()
+    context = { "content": content_html}
+    return render(request, 'blog_post.html', context)
 
 def github_api_example(request):
     # We can also combine Django with APIs
